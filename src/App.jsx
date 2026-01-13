@@ -1,15 +1,24 @@
 import './App.css'
 import Header from './components/Header'
 import Entry from './components/Entry'
+import data from './data'
 
 function App() {
+  const entryElements = data.map((entry) => {
+    return (
+      <Entry
+        key={key}
+        entry={entry}
+      />
+    )
+  })
 
   return (
     <>
-     <Header />
-     <main className="container">
-        <Entry />
-     </main>
+      <Header />
+      <main className="entries-container">
+        {entryElements}
+      </main>
     </>
   )
 }
